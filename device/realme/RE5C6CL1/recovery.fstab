@@ -1,0 +1,11 @@
+# Logical partitions
+system      /system      ext4    ro,barrier=1    wait,logical
+vendor      /vendor      ext4    ro,barrier=1    wait,logical
+product     /product     ext4    ro,barrier=1    wait,logical
+odm         /odm         ext4    ro,barrier=1    wait,logical
+
+# Data
+userdata    /data        ext4    rw,noatime,nosuid,nodev,discard \
+                         wait,check,encryptable=footer
+
+metadata    /metadata   ext4    rw              wait
