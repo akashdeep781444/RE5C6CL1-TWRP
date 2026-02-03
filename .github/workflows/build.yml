@@ -14,13 +14,7 @@ jobs:
     - name: Checkout device tree
       uses: actions/checkout@v4
 
-    - name: Cleanup before build
-      run: |
-         sudo rm -rf /tmp/*
-         export USE_CCACHE=1
-         export CCACHE_DIR=/tmp/ccache
-         ccache -M 5G
-
+      
     - name: Install dependencies
       run: |
         sudo apt update
